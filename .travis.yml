@@ -1,0 +1,27 @@
+language: python
+
+python:
+  - "3.10"  # Specify your Python version
+
+install:
+  - pip install -r requirements.txt  # Install dependencies
+
+script:
+  - black --check .
+  - flake8 --max-line-length=150 .
+  - coverage run manage.py test
+  - env
+
+after_success:
+  - coveralls  # Report coverage to Coveralls
+
+deploy:
+  provider: elasticbeanstalk
+  region: "your-aws-region"  # e.g., us-west-2
+  app: "your-eb-app-name"  # Your Elastic Beanstalk app name
+  env: "your-eb-environment-name"  # Your EB environment name
+  bucket_name: "your-eb-bucket"  # S3 bucket for EB deployments
+  access_key_id: $AWS_ACCESS_KEY_ID  # Securely store in Travis CI environment variables
+  secret_access_key: $AWS_SECRET_ACCESS_KEY  # Securely store in Travis CI environment variables
+  on:
+    branch: main  # Deploy only from the main branch
