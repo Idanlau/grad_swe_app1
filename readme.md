@@ -1,6 +1,5 @@
 ## Build Status
-[![Build Status](https://app.travis-ci.com/shreyas2499/swe1-app.svg?branch=main)](https://app.travis-ci.com/shreyas2499/swe1-app)
-
+[![Build Status](https://beta-app.travis-ci.com/Idanlau/grad_swe_app1.svg?branch=main)](https://beta-app.travis-ci.com/Idanlau/grad_swe_app1)
 
 ## Coverage
 With &&service
