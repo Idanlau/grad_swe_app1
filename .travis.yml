@@ -19,5 +19,6 @@ deploy:
   env: django-env-1  # Your EB environment name
   access_key_id: $AWS_ACCESS_KEY_ID  # Securely store in Travis CI environment variables
   secret_access_key: $AWS_SECRET_ACCESS_KEY  # Securely store in Travis CI environment variables
+  bucket_name: elasticbeanstalk-us-west-2-717279690562
   on:
     branch: main  # Deploy only from the main branch
