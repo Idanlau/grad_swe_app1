@@ -10,7 +10,8 @@ script:
   - coverage run manage.py test
 
 after_success:
-  - coveralls  # Report coverage to Coveralls
+  - coverage report
+  - coveralls
 
 # deploy:
 #   provider: elasticbeanstalk
