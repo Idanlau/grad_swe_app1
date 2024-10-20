@@ -4,6 +4,7 @@ python:
   - "3.10-dev"  # Specify your Python version
 
 install:
+  - pip install typing_extensions  # Install typing_extensions to support TypeGuard
   - pip install -r requirements.txt  # Install dependencies
 
 script:
@@ -17,10 +18,9 @@ after_success:
 
 deploy:
   provider: elasticbeanstalk
-  region: "your-aws-region"  # e.g., us-west-2
-  app: "your-eb-app-name"  # Your Elastic Beanstalk app name
-  env: "your-eb-environment-name"  # Your EB environment name
-  bucket_name: "your-eb-bucket"  # S3 bucket for EB deployments
+  region: us-west-2  # e.g., us-west-2
+  app: django-env-1  # Your Elastic Beanstalk app name
+  env: django-env-1  # Your EB environment name
   access_key_id: $AWS_ACCESS_KEY_ID  # Securely store in Travis CI environment variables
   secret_access_key: $AWS_SECRET_ACCESS_KEY  # Securely store in Travis CI environment variables
   on:
