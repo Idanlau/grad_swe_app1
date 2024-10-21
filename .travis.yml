@@ -12,13 +12,13 @@ script:
 after_success:
   - COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN coveralls
 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: us-west-2  # e.g., us-west-2
-#   app: django-env-1  # Your Elastic Beanstalk app name
-#   env: django-env-1  # Your EB environment name
-#   access_key_id: $AWS_ACCESS_KEY_ID  # Securely store in Travis CI environment variables
-#   secret_access_key: $AWS_SECRET_ACCESS_KEY  # Securely store in Travis CI environment variables
-#   bucket_name: elasticbeanstalk-us-west-2-717279690562
-#   on:
-#     branch: main  # Deploy only from the main branch
+deploy:
+  provider: elasticbeanstalk
+  region: us-west-2  # e.g., us-west-2
+  app: django-env-1  # Your Elastic Beanstalk app name
+  env: django-env-1  # Your EB environment name
+  access_key_id: $AWS_ACCESS_KEY_ID  # Securely store in Travis CI environment variables
+  secret_access_key: $AWS_SECRET_ACCESS_KEY  # Securely store in Travis CI environment variables
+  bucket_name: elasticbeanstalk-us-west-2-717279690562
+  on:
+    branch: main  # Deploy only from the main branch
