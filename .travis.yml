@@ -16,7 +16,7 @@ deploy:
   provider: elasticbeanstalk
   region: us-west-2  # e.g., us-west-2
   app: django-env-1  # Your Elastic Beanstalk app name
-  env: django-env-1  # Your EB environment name
+  env: Django-env-1-env  # Your EB environment name
   access_key_id: $aws_access_key_id  # Securely store in Travis CI environment variables
   secret_access_key: $aws_secret_access_key  # Securely store in Travis CI environment variables
   bucket_name: elasticbeanstalk-us-west-2-717279690562
